@@ -102,6 +102,17 @@ class DisruptionListViewControllerTest: XCTestCase {
         expect(self.viewController.errorViewLabel.text).to(equal("No Disruptions"))
     }
     
+    func testTableRemovesRowsWhenTheServerReturnsNoDisruptions() {
+        viewController.disruptionsService = StubDisruptionServiceSuccess()
+        viewController.viewWillAppear(false)
+        
+        expect(self.viewController.tableView.numberOfRowsInSection(0)).to(equal(3))
+        
+        viewController.disruptionsService = StubDisruptionServiceSuccessNoDisruptions()
+        viewController.viewWillAppear(false)
+        expect(self.viewController.tableView.numberOfRowsInSection(0)).to(equal(0))
+    }
+    
     func testTableBackgroundViewHasMessageWhenAnErrorIsReturned() {
         viewController.disruptionsService = StubDisruptionServiceNetworkError()
         viewController.viewWillAppear(false)

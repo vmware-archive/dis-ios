@@ -82,12 +82,11 @@ public class DisruptionListViewController: UITableViewController {
     private func handleDisruptionsData(disruptionData: [Disruption]) {
         tableView.backgroundView = nil
         
-        if disruptionData.count > 0 {
-            disruptions = disruptionData
-        } else {
+        if disruptionData.count == 0 {
             showStatusMessage("No Disruptions")
         }
         
+        disruptions = disruptionData
         tableView.reloadData()
         refreshControl?.endRefreshing()
     }
