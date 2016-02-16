@@ -26,7 +26,9 @@ class DisruptionServiceTest: XCTestCase {
     func testServiceReturnsDataOnSuccess() {
         let info = ["disruptions": [
             [
-                "line": ["name": "District", "foregroundColor": "#000000", "backgroundColor": "#FFFFFF"],
+                "line": "District",
+                "foregroundColor": "#000000",
+                "backgroundColor": "#FFFFFF",
                 "status": "Minor Delays",
                 "startTime": "12:25",
                 "endTime": "12:55"
@@ -66,25 +68,33 @@ class DisruptionServiceTest: XCTestCase {
     func testBrokenDisruptionItemsFromServerAreIgnored() {
         let info = ["disruptions": [
             [
-                "line": ["name": "District", "foregroundColor": "#000000", "backgroundColor": "#FFFFFF"],
+                "line": "District",
+                "foregroundColor": "#000000",
+                "backgroundColor": "#FFFFFF",
                 "status": "Minor Delays",
                 "startTime": "12:25",
                 "endTime": "12:55"
             ],
             [
-                "line": ["name": "Bakerloo", "foregroundColor": "#EEEEEE", "backgroundColor": "#000000"],
+                "line": "Bakerloo",
+                "foregroundColor": "#EEEEEE",
+                "backgroundColor": "#000000",
                 "status": "Minor Delays",
                 "startTime": "12:25",
                 "endTime": "12:55"
             ],
             [
-                "line": ["bat": "Country", "foregroundColor": "#DDDDDD", "backgroundColor": "#EEEEEE"],
+                "bat": "Country",
+                "foregroundColor": "#DDDDDD",
+                "backgroundColor": "#EEEEEE",
                 "status": "Minor Delays",
                 "startTime": "12:25",
                 "endTime": "12:55"
             ],
             [
-                "line": ["name": "Hammersmith & City", "foregroundColor": "#DDDDDD", "backgroundColor": "#EEEEEE"],
+                "line": "Hammersmith & City",
+                "foregroundColor": "#DDDDDD",
+                "backgroundColor": "#EEEEEE",
                 "status": "Minor Delays",
                 "startTime": "12:25",
                 "endTime": "12:55"

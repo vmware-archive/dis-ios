@@ -8,7 +8,13 @@ public struct Disruption {
     let endTime: String?
     
     init?(json: JSON) {
-        guard let line = Line(json: json["line"]) else {
+        let lineJSON = JSON([
+            "name": json["line"].stringValue,
+            "backgroundColor": json["backgroundColor"].stringValue,
+            "foregroundColor": json["foregroundColor"].stringValue
+        ])
+        
+        guard let line = Line(json: lineJSON) else {
             return nil
         }
 

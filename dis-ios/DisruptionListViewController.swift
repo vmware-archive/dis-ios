@@ -27,6 +27,7 @@ public class DisruptionListViewController: UITableViewController {
     }
     
     public override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         load()
     }
     
@@ -83,11 +84,11 @@ public class DisruptionListViewController: UITableViewController {
         
         if disruptionData.count > 0 {
             disruptions = disruptionData
-            tableView.reloadData()
         } else {
             showStatusMessage("No Disruptions")
         }
         
+        tableView.reloadData()
         refreshControl?.endRefreshing()
     }
     

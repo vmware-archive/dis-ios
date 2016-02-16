@@ -35,7 +35,9 @@ class ViewControllerUITest: XCTestCase {
     func testWhenThereAreDisruptionsItShowsDisruptedLineInfo() {
         let info = ["disruptions": [
             [
-                "line": ["name": "District", "foregroundColor": "#000000", "backgroundColor": "#FFFFFF"],
+                "line": "District",
+                "foregroundColor": "#000000",
+                "backgroundColor": "#FFFFFF",
                 "status": "Minor Delays",
                 "startTime": "12:25",
                 "endTime": "12:55"
@@ -58,7 +60,9 @@ class ViewControllerUITest: XCTestCase {
     func testWhenUserPullsDownOldDataIsClearedAndTableShowsNewData() {
         let beforeRefresh = ["disruptions": [
             [
-                "line": ["name": "District", "foregroundColor": "#000000", "backgroundColor": "#FFFFFF"],
+                "line": "District",
+                "foregroundColor": "#000000",
+                "backgroundColor": "#FFFFFF",
                 "status": "Minor Delays",
                 "startTime": "12:25",
                 "endTime": "12:55"
@@ -73,7 +77,9 @@ class ViewControllerUITest: XCTestCase {
 
         let afterRefresh = ["disruptions": [
             [
-                "line": ["name": "Jubilee", "foregroundColor": "#000000", "backgroundColor": "#FFFFFF"],
+                "line": "Jubilee",
+                "foregroundColor": "#000000",
+                "backgroundColor": "#FFFFFF",
                 "status": "Minor Delays",
                 "startTime": "12:25",
                 "endTime": "12:55"

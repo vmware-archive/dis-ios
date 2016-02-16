@@ -12,7 +12,9 @@ class DisruptionTest: XCTestCase {
     func testValidJSON() {
         
         let disruption = Disruption(json: JSON([
-            "line": ["name": "District", "foregroundColor": "#000000", "backgroundColor": "#FFFFFF"],
+            "line": "District",
+            "foregroundColor": "#000000",
+            "backgroundColor": "#FFFFFF",
             "status": "Minor Delays",
             "startTime": "12:25",
             "endTime": "12:55"
@@ -46,7 +48,9 @@ class DisruptionTest: XCTestCase {
 
     func testMissingOptionalValues() {
         let disruption = Disruption(json: JSON([
-            "line": ["name": "District", "foregroundColor": "#000000", "backgroundColor": "#FFFFFF"],
+            "line": "District",
+            "foregroundColor": "#000000",
+            "backgroundColor": "#FFFFFF",
             "status": nil,
             "startTime": nil,
             "endTime": nil
