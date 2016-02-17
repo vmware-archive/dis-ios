@@ -33,7 +33,11 @@ class DisruptionServiceTest: XCTestCase {
                 "startTime": "10:29",
                 "startTimestamp": 1455704998567,
                 "endTime": "11:29",
-                "endTimestamp": 1455708598567
+                "endTimestamp": 1455708598567,
+                "earliestEndTime": "12:45",
+                "latestEndTime": "13:15",
+                "earliestEndTimestamp": 1458218700000,
+                "latestEndTimestamp": 1458220500000
             ]
         ]]
         let data = try! JSON(info).rawData()
@@ -63,53 +67,18 @@ class DisruptionServiceTest: XCTestCase {
             expect(disruptions?.first?.line.name).to(equal("District"))
             expect(disruptions?.first?.status).to(equal("Minor Delays"))
             expect(disruptions?.first?.startTime).to(equal(NSDate(timeIntervalSince1970: 1455704998567 / 1000)))
-            expect(disruptions?.first?.endTime).to(equal(NSDate(timeIntervalSince1970: 1455708598567 / 1000)))
+            expect(disruptions?.first?.earliestEndTime).to(equal(NSDate(timeIntervalSince1970: 1458218700000 / 1000)))
+            expect(disruptions?.first?.latestEndTime).to(equal(NSDate(timeIntervalSince1970: 1458220500000 / 1000)))
             expect(error).to(beNil())
         }
     }
     
     func testBrokenDisruptionItemsFromServerAreIgnored() {
         let info: Dictionary<String, AnyObject> = ["disruptions": [
-            [
-                "line": "District",
-                "foregroundColor": "#000000",
-                "backgroundColor": "#FFFFFF",
-                "status": "Minor Delays",
-                "startTime": "10:29",
-                "endTime": "11:29",
-                "startTimestamp": 1455704998567,
-                "endTimestamp": 1455708598567
-            ],
-            [
-                "line": "Bakerloo",
-                "foregroundColor": "#EEEEEE",
-                "backgroundColor": "#000000",
-                "status": "Minor Delays",
-                "startTime": "12:25",
-                "endTime": "12:55",
-                "startTimestamp": 1458217500000,
-                "endTimestamp": 1458219300000
-            ],
-            [
-                "bat": "Country",
-                "foregroundColor": "#DDDDDD",
-                "backgroundColor": "#EEEEEE",
-                "status": "Minor Delays",
-                "startTime": "12:25",
-                "endTime": "12:55",
-                "startTimestamp": 1458217500000,
-                "endTimestamp": 1458219300000
-            ],
-            [
-                "line": "Hammersmith & City",
-                "foregroundColor": "#DDDDDD",
-                "backgroundColor": "#EEEEEE",
-                "status": "Minor Delays",
-                "startTime": "12:25",
-                "endTime": "12:55",
-                "startTimestamp": 1458217500000,
-                "endTimestamp": 1458219300000
-            ]
+            ["line": "District"],
+            ["line": "Bakerloo"],
+            ["bat": "Country"],
+            ["line": "Hammersmith & City"]
         ]]
         let data = try! JSON(info).rawData()
         

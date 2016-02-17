@@ -19,12 +19,17 @@ class DisruptionTest: XCTestCase {
             "startTime": "12:25",
             "endTime": "12:55",
             "startTimestamp": 1458217500000,
-            "endTimestamp": 1458219300000
+            "endTimestamp": 1458219300000,
+            "earliestEndTime": "12:45",
+            "latestEndTime": "13:15",
+            "earliestEndTimestamp": 1458218700000,
+            "latestEndTimestamp": 1458220500000
         ]))
         
         expect(disruption?.status).to(equal("Minor Delays"))
         expect(disruption?.startTime).to(equal(NSDate(timeIntervalSince1970: 1458217500000 / 1000)))
-        expect(disruption?.endTime).to(equal(NSDate(timeIntervalSince1970: 1458219300000 / 1000)))
+        expect(disruption?.earliestEndTime).to(equal(NSDate(timeIntervalSince1970: 1458218700000 / 1000)))
+        expect(disruption?.latestEndTime).to(equal(NSDate(timeIntervalSince1970: 1458220500000 / 1000)))
         expect(disruption?.line).toNot(beNil())
 
     }
@@ -53,13 +58,16 @@ class DisruptionTest: XCTestCase {
             "startTime": nil,
             "endTime": nil,
             "startTimestamp": nil,
-            "endTimestamp": nil
+            "endTimestamp": nil,
+            "earliestEndTimestamp": nil,
+            "latestEndTimestamp": nil
         ]))
         
         expect(disruption?.line.name).to(equal("District"))
         expect(disruption?.status).to(beNil())
         expect(disruption?.startTime).to(beNil())
-        expect(disruption?.endTime).to(beNil())
+        expect(disruption?.earliestEndTime).to(beNil())
+        expect(disruption?.latestEndTime).to(beNil())
 
     }
     

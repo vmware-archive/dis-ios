@@ -42,7 +42,11 @@ class ViewControllerUITest: XCTestCase {
                 "startTime": "12:25",
                 "endTime": "12:55",
                 "startTimestamp": 1458217500000,
-                "endTimestamp": 1458219300000
+                "endTimestamp": 1458219300000,
+                "earliestEndTime": "12:45",
+                "latestEndTime": "13:15",
+                "earliestEndTimestamp": 1458218700000,
+                "latestEndTimestamp": 1458220500000
             ],
             ]]
         startWebServerWithResponse(try! JSON(info).rawData())
@@ -55,7 +59,8 @@ class ViewControllerUITest: XCTestCase {
         expect(disruptionsTable.cells.staticTexts["District"].exists).to(beTrue())
         expect(disruptionsTable.cells.staticTexts["Minor Delays"].exists).to(beTrue())
         expect(disruptionsTable.cells.staticTexts["12:25 PM"].exists).to(beTrue())
-        expect(disruptionsTable.cells.staticTexts["12:55 PM"].exists).to(beTrue())
+        expect(disruptionsTable.cells.staticTexts["12:45 PM"].exists).to(beTrue())
+        expect(disruptionsTable.cells.staticTexts["1:15 PM"].exists).to(beTrue())
     }
     
     func testWhenUserPullsDownOldDataIsClearedAndTableShowsNewData() {
@@ -64,9 +69,7 @@ class ViewControllerUITest: XCTestCase {
                 "line": "District",
                 "foregroundColor": "#000000",
                 "backgroundColor": "#FFFFFF",
-                "status": "Minor Delays",
-                "startTime": "12:25",
-                "endTime": "12:55"
+                "status": "Minor Delays"
             ],
             ]]
         
@@ -81,9 +84,7 @@ class ViewControllerUITest: XCTestCase {
                 "line": "Jubilee",
                 "foregroundColor": "#000000",
                 "backgroundColor": "#FFFFFF",
-                "status": "Minor Delays",
-                "startTime": "12:25",
-                "endTime": "12:55"
+                "status": "Minor Delays"
             ],
             ]]
         startWebServerWithResponse(try! JSON(afterRefresh).rawData())

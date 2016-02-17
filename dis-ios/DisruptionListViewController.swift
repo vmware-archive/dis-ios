@@ -63,7 +63,8 @@ public class DisruptionListViewController: UITableViewController {
         cell.lineNameLabel?.text = disruptions[indexPath.row].line.name
         cell.statusLabel?.text = disruptions[indexPath.row].status
         cell.startTimeLabel?.text = NSDate.getFormattedTimeString(disruptions[indexPath.row].startTime)
-        cell.endTimeLabel?.text = NSDate.getFormattedTimeString(disruptions[indexPath.row].endTime)
+        cell.earliestEndTimeLabel?.text = NSDate.getFormattedTimeString(disruptions[indexPath.row].earliestEndTime)
+        cell.latestEndTimeLabel?.text = NSDate.getFormattedTimeString(disruptions[indexPath.row].latestEndTime)
         cell.leftBorder?.backgroundColor = disruptions[indexPath.row].line.backgroundColor
         return cell
     }
