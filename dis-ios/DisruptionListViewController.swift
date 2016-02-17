@@ -62,8 +62,8 @@ public class DisruptionListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("DisruptionCell")! as! DisruptionCell
         cell.lineNameLabel?.text = disruptions[indexPath.row].line.name
         cell.statusLabel?.text = disruptions[indexPath.row].status
-        cell.startTimeLabel?.text = disruptions[indexPath.row].startTime
-        cell.endTimeLabel?.text = disruptions[indexPath.row].endTime
+        cell.startTimeLabel?.text = NSDate.getFormattedTimeString(disruptions[indexPath.row].startTime)
+        cell.endTimeLabel?.text = NSDate.getFormattedTimeString(disruptions[indexPath.row].endTime)
         cell.leftBorder?.backgroundColor = disruptions[indexPath.row].line.backgroundColor
         return cell
     }

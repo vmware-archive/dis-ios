@@ -17,12 +17,14 @@ class DisruptionTest: XCTestCase {
             "backgroundColor": "#FFFFFF",
             "status": "Minor Delays",
             "startTime": "12:25",
-            "endTime": "12:55"
+            "endTime": "12:55",
+            "startTimestamp": 1458217500000,
+            "endTimestamp": 1458219300000
         ]))
         
         expect(disruption?.status).to(equal("Minor Delays"))
-        expect(disruption?.startTime).to(equal("12:25"))
-        expect(disruption?.endTime).to(equal("12:55"))
+        expect(disruption?.startTime).to(equal(NSDate(timeIntervalSince1970: 1458217500000 / 1000)))
+        expect(disruption?.endTime).to(equal(NSDate(timeIntervalSince1970: 1458219300000 / 1000)))
         expect(disruption?.line).toNot(beNil())
 
     }
@@ -31,16 +33,12 @@ class DisruptionTest: XCTestCase {
         let disruptionWithNilLine = Disruption(json: JSON([
             "line": nil,
             "status": "Minor Delays",
-            "startTime": "12:25",
-            "endTime": "12:55"
             ]))
         
         expect(disruptionWithNilLine).to(beNil())
         
         let disruptionWithoutLineKey = Disruption(json: JSON([
-            "status": "Minor Delays",
-            "startTime": "12:25",
-            "endTime": "12:55"
+            "status": "Minor Delays"
             ]))
         
         expect(disruptionWithoutLineKey).to(beNil())
@@ -53,7 +51,9 @@ class DisruptionTest: XCTestCase {
             "backgroundColor": "#FFFFFF",
             "status": nil,
             "startTime": nil,
-            "endTime": nil
+            "endTime": nil,
+            "startTimestamp": nil,
+            "endTimestamp": nil
         ]))
         
         expect(disruption?.line.name).to(equal("District"))

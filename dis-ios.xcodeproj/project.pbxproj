@@ -22,6 +22,8 @@
 		AE7345151C6E035A00067149 /* LineTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7345141C6E035A00067149 /* LineTest.swift */; };
 		AE8AAE031C64E4A600F4AC95 /* DisruptionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8AAE021C64E4A600F4AC95 /* DisruptionServiceProtocol.swift */; };
 		AE8AAE051C64E4BA00F4AC95 /* DisruptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8AAE041C64E4BA00F4AC95 /* DisruptionService.swift */; };
+		AE924AB11C74C93600CCCA68 /* JSON+Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE924AB01C74C93600CCCA68 /* JSON+Timestamp.swift */; };
+		AE924AB31C74CBD400CCCA68 /* NSDate+Timestring.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE924AB21C74CBD400CCCA68 /* NSDate+Timestring.swift */; };
 		AEE6452C1C6B7B0900C5B3E1 /* DisruptionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE6452B1C6B7B0900C5B3E1 /* DisruptionTest.swift */; };
 		AEE6452E1C6B7DD900C5B3E1 /* Disruption.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE6452D1C6B7DD900C5B3E1 /* Disruption.swift */; };
 		B7DBDE89C310D4A5F9A2AC78 /* Pods_dis_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7995E244971F3BCDABC2A91 /* Pods_dis_iosTests.framework */; };
@@ -71,6 +73,8 @@
 		AE7345141C6E035A00067149 /* LineTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineTest.swift; sourceTree = "<group>"; };
 		AE8AAE021C64E4A600F4AC95 /* DisruptionServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisruptionServiceProtocol.swift; sourceTree = "<group>"; };
 		AE8AAE041C64E4BA00F4AC95 /* DisruptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisruptionService.swift; sourceTree = "<group>"; };
+		AE924AB01C74C93600CCCA68 /* JSON+Timestamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JSON+Timestamp.swift"; sourceTree = "<group>"; };
+		AE924AB21C74CBD400CCCA68 /* NSDate+Timestring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Timestring.swift"; sourceTree = "<group>"; };
 		AEE645281C6B55C100C5B3E1 /* dis-iosTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dis-iosTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		AEE6452B1C6B7B0900C5B3E1 /* DisruptionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisruptionTest.swift; sourceTree = "<group>"; };
 		AEE6452D1C6B7DD900C5B3E1 /* Disruption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Disruption.swift; sourceTree = "<group>"; };
@@ -171,6 +175,8 @@
 				AEE6452D1C6B7DD900C5B3E1 /* Disruption.swift */,
 				AE6FCDEF1C6CD84D00414949 /* DisruptionCell.swift */,
 				AE7345121C6E031800067149 /* Line.swift */,
+				AE924AB01C74C93600CCCA68 /* JSON+Timestamp.swift */,
+				AE924AB21C74CBD400CCCA68 /* NSDate+Timestring.swift */,
 			);
 			path = "dis-ios";
 			sourceTree = "<group>";
@@ -464,6 +470,8 @@
 				AE8AAE051C64E4BA00F4AC95 /* DisruptionService.swift in Sources */,
 				AE8AAE031C64E4A600F4AC95 /* DisruptionServiceProtocol.swift in Sources */,
 				AE5F38D81C64E3A100056F77 /* DisruptionListViewController.swift in Sources */,
+				AE924AB11C74C93600CCCA68 /* JSON+Timestamp.swift in Sources */,
+				AE924AB31C74CBD400CCCA68 /* NSDate+Timestring.swift in Sources */,
 				AE5F38D61C64E3A100056F77 /* AppDelegate.swift in Sources */,
 				AE7345131C6E031800067149 /* Line.swift in Sources */,
 				AEE6452E1C6B7DD900C5B3E1 /* Disruption.swift in Sources */,
